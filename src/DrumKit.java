@@ -38,9 +38,9 @@ public class DrumKit extends MouseAdapter {
     
    	 // 7. Download an image of a drum from the Internet. Drop it into your Eclipse project under "default package".
    	 // 8. Put the name of your image in a String variable.
-    
+    String drumpic="drum";
    	 // 9. Use the "createLabelImage()" method to initialize the drumLabelWithImage variable.
-   	 
+   	 createLabelImage();
    	 // 10. Add the image to the panel
     
    	 // 11. Set the layout of the panel to "new GridLayout()"
