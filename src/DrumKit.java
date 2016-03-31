@@ -17,6 +17,8 @@ import javax.swing.JPanel;
 public class DrumKit extends MouseAdapter {
 
     JLabel drumLabelWithImage;
+    JLabel drumLabelWithImage2;
+    JLabel drumLabelWithImage3;
 
     public static void main(String[] args) throws Exception {
    	 new DrumKit().getGoing();
@@ -38,28 +40,50 @@ public class DrumKit extends MouseAdapter {
     
    	 // 7. Download an image of a drum from the Internet. Drop it into your Eclipse project under "default package".
    	 // 8. Put the name of your image in a String variable.
-    String drumpic="drum";
+    String drumkit="drum1.jpeg";
+    String drumkit2="drum2.jpg";
+    String drumkit3="drum3.jpg";
    	 // 9. Use the "createLabelImage()" method to initialize the drumLabelWithImage variable.
-   	 createLabelImage();
+   	drumLabelWithImage=createLabelImage(drumkit);
+   	drumLabelWithImage2=createLabelImage(drumkit2);
+   	drumLabelWithImage3=createLabelImage(drumkit3);
    	 // 10. Add the image to the panel
-    
+    panel.add(drumLabelWithImage);
+    panel.add(drumLabelWithImage2);
+    panel.add(drumLabelWithImage3);
    	 // 11. Set the layout of the panel to "new GridLayout()"
-    
+    panel.setLayout(new GridLayout());
    	 // 12. call the pack() method on the frame
-   	 
+   	frame.pack();
    	 // 13. add a mouse listener to drumLabelWithImage.
-
+   	 drumLabelWithImage.addMouseListener(this);
+   	 drumLabelWithImage2.addMouseListener(this);
+   	drumLabelWithImage3.addMouseListener(this);
     }
 
     public void mouseClicked(MouseEvent e) {
    	 // 14. When the mouse is clicked, print "mouse clicked"
-
+    System.out.println("mouse clicked");
    	 JLabel drumClicked = (JLabel) e.getSource();
    	 // 15. Download a drum sound and drop it into your "default package". You can find it on freesound.org. To download it, log in as leagueofamazing/code4life.
    	 // 16. If they clicked on the drumImage...
-
+   	 String fileName="139501__robertmcdonald__big-hit-1.wav";
+   	 String fileName2="85767__schatzl03__symbol-long-ring.aif";
+   	 String fileName3="165495__chripei__hand-drum-large-single-hit.wav";
+   	 if(drumClicked==drumLabelWithImage2){
+   		 playSound(fileName2);
+   	 }
+   	 if(drumClicked==drumLabelWithImage3){
+   		 playSound(fileName3);
+   	 }
+   	 if(drumClicked==drumLabelWithImage){
+   		playSound(fileName);
+   	 }
+   	 else{
+   		 
+   	 }
    		 // 17. ...use the playSound method to play a drum sound.
-
+   	 	
    	 // 18. Add more images to make a drumkit. Remember to add a mouse listener to each one.
     }
 
