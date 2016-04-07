@@ -1,25 +1,38 @@
 import java.awt.Frame;
+import java.awt.Window;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class CelebrityBodyParts {
 
 	// Get 3 celebrity photos from the internet, save them to your computer, and fill
 	// in their paths here. To get the path, right click on the image, and copy its Location.
-	String firstImage = "drum.jpg";
+	String firstImage = "drum.jpeg";
 	String secondImage = "drum2.jpg";
 	String thirdImage = "drum3.jpg";
 
+	
+	
+	JLabel drumLabelWithImage;
 	Frame window = new Frame();
+	JPanel panel=new JPanel();
+	
+	// frame and panel
 	
 	private void startQuiz() {
+		
 		// Set the size of the window so that you can only see part of the image.
-		window.setSize(100, 100);;	
+		window.setSize(100, 100);
+		window.setVisible(true);
+		//window.add(panel);
+		
 		// Make an int variable to hold the score.
 		int score=0;
 		// Ask the user who this person is and store their answer

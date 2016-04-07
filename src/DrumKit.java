@@ -37,7 +37,6 @@ public class DrumKit extends MouseAdapter {
    	 JPanel panel=new JPanel();
    	 frame.add (panel);
    	 // 6. Add the panel to the frame. (The panel is invisible.)
-    
    	 // 7. Download an image of a drum from the Internet. Drop it into your Eclipse project under "default package".
    	 // 8. Put the name of your image in a String variable.
     String drumkit="drum1.jpeg";
