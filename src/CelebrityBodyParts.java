@@ -27,19 +27,19 @@ public class CelebrityBodyParts {
 	// frame and panel
 	
 	private void startQuiz() {
-		
+		window.add(panel);
 		// Set the size of the window so that you can only see part of the image.
 		window.setSize(100, 100);
 		window.setVisible(true);
 		//window.add(panel);
-		
+		window.pack();
 		// Make an int variable to hold the score.
 		int score=0;
 		// Ask the user who this person is and store their answer
 		String player1=JOptionPane.showInputDialog("Who is this person");
 		// If they got the answer right:
 		// -- Tell them they are correct.
-		if(player1.equals("q")){
+		if(player1.equals("drum")){
 		score=score+1;
 		JOptionPane.showMessageDialog(null,"Correct");
 		
@@ -57,6 +57,7 @@ public class CelebrityBodyParts {
 		
 		// .... repeat for all your images.....
 		showNextImage();
+		
 	}
 
 	public void showNextImage() {
