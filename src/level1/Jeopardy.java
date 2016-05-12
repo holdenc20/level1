@@ -31,12 +31,13 @@ import java.io.File;
 public class Jeopardy implements ActionListener {
 	private JButton firstButton;
 	private JButton secondButton;
-	private JButton thirdButton, fourthButton, fithButton;
+	private JButton thirdButton, fourthButton, fithButton, sixthButton,seventhButton,eightButton,ninthButton;
 	
 	private JPanel quizPanel;
 	int score = 0;
 	JLabel scoreBox = new JLabel("0");
-	int buttonCount = 0;
+	int buttonCount = -10
+			;
 
 	public static void main(String[] args) {
 		new Jeopardy().start();
@@ -52,34 +53,52 @@ public class Jeopardy implements ActionListener {
 		// 2. Give your frame a title
 		frame.setTitle("Jeopardy");
 		// 3. Create a JPanel variable to hold the header using the createHeader method
-		JPanel name=createHeader("Stuff");
+		JPanel name=createHeader("Quesions of impossible answers:");
+		JPanel name2=createHeader("Riddles:");
+		JPanel name3=createHeader("Logic Puzzels:");
 		// 4. Add the header component to the quizPanel
 		quizPanel.add(name);
+		quizPanel.add(name2);
+		quizPanel.add(name3);
 		// 5. Add the quizPanel to the frame
 		frame.add(quizPanel);
 		
 		// 6. Use the createButton method to set the value of firstButton 
 		firstButton=createButton("$200");
-		thirdButton=createButton("$600");
-		fourthButton=createButton("$800");
-		fithButton=createButton("$1000");
+		secondButton=createButton("$200");
+		thirdButton=createButton("$200");
+		fourthButton=createButton("$400");
+		fithButton=createButton("$400");
+		sixthButton=createButton("$400");
+		seventhButton=createButton("$600");
+		eightButton=createButton("$600");
+		ninthButton=createButton("$600");
 	// 7. Add the firstButton to the quizPanel
 	quizPanel.add(firstButton);
+	quizPanel.add(secondButton);
 	quizPanel.add(thirdButton);
 	quizPanel.add(fourthButton);
 	quizPanel.add(fithButton);
+	quizPanel.add(sixthButton);
+	quizPanel.add(seventhButton);
+	quizPanel.add(eightButton);
+	quizPanel.add(ninthButton);
 		// 8. Write the code inside the createButton() method below. Check that your game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4.
 		
 		// 9. Use the secondButton variable to hold a button using the createButton method
-		secondButton=createButton("$400");
+		
 		// 10. Add the secondButton to the quizPanel
-		quizPanel.add(secondButton);
+		
 		// 11. Add action listeners to the buttons (2 lines of code)
 		firstButton.addActionListener(this);
 		secondButton.addActionListener(this);
 		thirdButton.addActionListener(this);
 		fourthButton.addActionListener(this);
 		fithButton.addActionListener(this);
+		sixthButton.addActionListener(this);
+		seventhButton.addActionListener(this);
+		eightButton.addActionListener(this);
+		ninthButton.addActionListener(this);
 		// 12. Fill in the actionPerformed() method below
 				
 		frame.pack();
@@ -116,16 +135,44 @@ public class Jeopardy implements ActionListener {
 		JButton buttonPressed = (JButton) arg0.getSource();
 		// If the buttonPressed was the firstButton
 		if(buttonPressed==firstButton){
-			askQuestion("What is your quest?","to win",200);
+			askQuestion("What is your favorite color?","It is not what you think it is",200);
+			firstButton.removeActionListener(this);
+			firstButton.setText("-----");
 		}
 		if(buttonPressed==thirdButton){
-			askQuestion("What is the average flight speed of a laiden swallow?","african or european",600);
+			askQuestion("The human body holds nine quarts of blood. Suppose you were alone in the desert and accidently cut a major artery. If you bleed at one cup a minute, how long will it take you to bleed to death?","Apply a tourniquet, and you won't.",200);
+			thirdButton.removeActionListener(this);
+			thirdButton.setText("-----");
 		}
 		if(buttonPressed==fourthButton){
-			askQuestion("What is the average flight speed of a african laiden swallow","-1",800);
+			askQuestion("What is the answer?","",400);
+			fourthButton.removeActionListener(this);
+			fourthButton.setText("-----");
 		}
 		if(buttonPressed==fithButton){
-			askQuestion("Is question 4 possible?","yes",999999999);
+			askQuestion("In a one-story pink house, there was a pink person, a pink cat, a pink fish, a pink computer, a pink chair, a pink table, a pink telephone, a pink shower– everything was pink! What color were the stairs?","It did not have stairs",400);
+			fithButton.removeActionListener(this);
+			fithButton.setText("-----");
+		}
+		if(buttonPressed==sixthButton){
+			askQuestion("What's the largest amount of money you can have in change and still not have change for a dollar?","$1.19",400);
+			sixthButton.removeActionListener(this);
+			sixthButton.setText("-----");
+		}
+		if(buttonPressed==seventhButton){
+			askQuestion("Why are pizza boxes square when the pizza is round?","Because why not",600);
+			seventhButton.removeActionListener(this);
+			seventhButton.setText("-----");
+		}
+		if(buttonPressed==eightButton){
+			askQuestion("Who makes it, has no need of it.Who buys it, has no use for it.  uses it can neither see nor feel it. What is it?","a coffin",600);
+			eightButton.removeActionListener(this);
+			eightButton.setText("-----");
+		}
+		if(buttonPressed==ninthButton){
+			askQuestion("A certain five letter word becomes shorter when you add two letters to it. What is the word?","short",600);
+			ninthButton.removeActionListener(this);
+			ninthButton.setText("-----");
 		}
 		
 			// Call the askQuestion() method
@@ -134,7 +181,9 @@ public class Jeopardy implements ActionListener {
 		
 		// Or if the buttonPressed was the secondButton
 		if(buttonPressed==secondButton){
-			askQuestion("What is your favorite color?","black",400);
+			askQuestion("I’m tall when I’m young and I’m short when I’m old. What am I?","a candle",400);
+			secondButton.removeActionListener(this);
+			secondButton.setText("-----");
 		}
 
 			// Call the askQuestionRecipe with a harder question
