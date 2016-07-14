@@ -13,7 +13,14 @@ public class Backpack {
 	
 	public static void main (String[] args){
 		/* Your mission is to get to school, but first you need to get all of your supplies into your backpack. */
-
+		Backpack bag=new Backpack();
+		Supply Pencil=new Supply();
+		Supply Ruler=new Supply();
+		Supply Textbook=new Supply();
+		bag.putInBackpack(Pencil);
+		bag.putInBackpack(Ruler);
+		bag.putInBackpack(Textbook);
+		bag.goToSchool();
 
 
 	}
